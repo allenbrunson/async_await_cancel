@@ -1,5 +1,4 @@
 name: async_await_cancel
-author: allen brunson
 description: async/await cancellation demo
 version: 1.0.0
 publish_to: "none"
@@ -11,6 +10,6 @@ flutter:
   uses-material-design: true
 
 dependencies:
-  async: ^2.6.1        # https://pub.dev/packages/async
+  async: 2.8.2           # https://pub.dev/packages/async
   flutter:
     sdk: flutter

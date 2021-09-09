@@ -19,4 +19,3 @@ String textWidgetString(Text text) {
     }
     return "";
 }
-

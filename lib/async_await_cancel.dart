@@ -39,7 +39,6 @@ export "date_time/date_time_int.dart";
 export "date_time/time_span_functions.dart";
 
 // details
-export "details/analyze_functions.dart";
 export "details/titles.dart";
 
 // enums

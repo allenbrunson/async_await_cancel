@@ -2,7 +2,6 @@
 // by allen brunson  december 12 2018
 
 import "package:async_await_cancel/async_await_cancel.dart";
-import "package:flutter/scheduler.dart";
 
 
 /******************************************************************************/

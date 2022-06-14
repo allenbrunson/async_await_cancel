@@ -5,7 +5,7 @@ publish_to: "none"
 
 environment:
   sdk: ">=2.14.0 <3.0.0"
-  flutter: ">=2.0.0 <3.0.0"
+  flutter: ">=3.0.0 <4.0.0"
 flutter:
   uses-material-design: true
 
@@ -15,4 +15,4 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  dart_code_metrics: ^4.15.0   # https://pub.dev/packages/dart_code_metrics
+  dart_code_metrics: ^4.15.2   # https://pub.dev/packages/dart_code_metrics

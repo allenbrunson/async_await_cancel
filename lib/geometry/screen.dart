@@ -25,8 +25,7 @@ double screenWidth() {
 // media query data from the window singleton
 
 MediaQueryData windowMediaQueryData() {
-    final wind = WidgetsBinding.instance?.window;
-    return MediaQueryData.fromWindow(wind!);
+    return MediaQueryData.fromWindow(WidgetsBinding.instance.window);
 }
 
 

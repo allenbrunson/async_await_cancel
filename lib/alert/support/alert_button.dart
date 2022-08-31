@@ -35,5 +35,5 @@ Widget? alertChoiceButton(BuildContext? context, String title, dynamic value) {
 ButtonStyle _buttonStyle(BuildContext context) {
     final back = Theme.of(context).colorScheme.secondary;
     final fore = textColor(context, back);
-    return TextButton.styleFrom(primary:fore, backgroundColor:back);
+    return TextButton.styleFrom(foregroundColor:fore, backgroundColor:back);
 }

@@ -10,7 +10,7 @@ flutter:
   uses-material-design: true
 
 dependencies:
-  async: 2.9.0                 # https://pub.dev/packages/async
+  async: 2.10.0                # https://pub.dev/packages/async
   flutter:
     sdk: flutter
 

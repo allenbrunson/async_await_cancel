@@ -23,8 +23,8 @@ class NetCancelable
 
     // public instance methods
 
-    void cancel() {
-        this._completer.operation.cancel();
+    Future<void> cancel() async {
+        await this._completer.operation.cancel();
     }
 
     Future<NetResponse> complete() async {

@@ -11,7 +11,7 @@ import "package:async_await_cancel/async_await_cancel.dart";
 /******************************************************************************/
 
 void showNetAlert(BuildContext? context, NetResponse response) {
-    showAlertWidget(context, netResponseAlertDialog(context, response));
+    unawaited(showAlertWidget(context, netResponseAlertDialog(context, response)));
 }
 
 Future<NetResponse> showNetRequest(BuildContext? ctxt, String title,

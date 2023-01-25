@@ -29,7 +29,7 @@ Widget clipboardWidget(BuildContext? context, Widget child, String text,
 void copyToClipboard(BuildContext? context, String text,
  {bool showSnackBar = true})
 {
-    Clipboard.setData(ClipboardData(text:text));
+    unawaited(Clipboard.setData(ClipboardData(text:text)));
     if (showSnackBar && (context is BuildContext)) {
         const view = Text("copied to clipboard");
         final sbar = SnackBar(content:view, duration:durationAnimate());

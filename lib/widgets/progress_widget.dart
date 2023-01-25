@@ -64,8 +64,8 @@ class _ProgressWidgetState extends State<ProgressWidget>
 
     // private state methods
 
-    void _cancel() {
-        this.widget.netCancelable?.cancel();
+    Future<void> _cancel() async {
+        await this.widget.netCancelable?.cancel();
     }
 
     double _elapsedTime() {

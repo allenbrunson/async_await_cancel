@@ -18,7 +18,7 @@ export "dart:math";
 export "dart:typed_data";
 
 // dart graphics
-export "dart:ui" show Color, Offset, Radius, Rect, RRect, Size;
+export "dart:ui" show Color, Offset, RRect, Radius, Rect, Size;
 export "dart:ui" show Canvas, PictureRecorder;
 export "dart:ui" show Image, ImageByteFormat, instantiateImageCodec;
 

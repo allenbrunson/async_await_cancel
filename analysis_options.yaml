@@ -3,10 +3,6 @@
 # by allen brunson  january 2 2021
 
 analyzer:
-  strong-mode:
-    implicit-casts: true
-    implicit-dynamic: true
-
 dart_code_metrics:
   metrics:
     cyclomatic-complexity: 20
@@ -134,7 +130,6 @@ linter:
     prefer_constructors_over_static_methods: false
     prefer_contains: true
     prefer_double_quotes: true
-    prefer_equal_for_default_values: true
     prefer_expression_function_bodies: false
     prefer_final_fields: true
     prefer_final_in_for_each: true

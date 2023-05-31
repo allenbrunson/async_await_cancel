@@ -21,7 +21,7 @@ class ProgressWidget extends StatefulWidget
     // constructor
 
     const ProgressWidget({this.netCancelable, this.message,
-     required this.timeout, Key? key}): super(key:key);
+     required this.timeout, super.key});
 
     // public instance methods
 

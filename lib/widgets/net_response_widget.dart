@@ -18,8 +18,7 @@ class NetResponseWidget extends StatelessWidget
 
     // constructor
 
-    const NetResponseWidget({required this.netResponse,
-     Key? key}): super(key:key);
+    const NetResponseWidget({required this.netResponse, super.key});
 
     // public functions
 

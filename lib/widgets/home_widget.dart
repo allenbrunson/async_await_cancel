@@ -18,7 +18,7 @@ class HomeWidget extends StatefulWidget
 
     // constructor
 
-    const HomeWidget({required this.title, Key? key}): super(key: key);
+    const HomeWidget({required this.title, super.key});
 
     // public instance methods
 

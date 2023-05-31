@@ -14,7 +14,7 @@ class AppWidget extends StatelessWidget
 {
     // constructor
 
-    const AppWidget({Key? key}): super(key:key);
+    const AppWidget({super.key});
 
     // public instance methods
 

@@ -1,6 +1,5 @@
 // screen.dart -- screen functions
 // by allen brunson  december 8 2018
-// ignore_for_file: deprecated_member_use
 
 import "package:async_await_cancel/async_await_cancel.dart";
 
@@ -23,10 +22,12 @@ double screenWidth() {
     return screenSize().width;
 }
 
-// media query data from the window singleton
+// media query data for the whole screen
 
 MediaQueryData windowMediaQueryData() {
-    return MediaQueryData.fromWindow(WidgetsBinding.instance.window);
+    final plat = WidgetsBinding.instance.platformDispatcher;
+    final view = plat.views.first;
+    return MediaQueryData.fromView(view);
 }
 
 

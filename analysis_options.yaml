@@ -88,7 +88,6 @@ linter:
     hash_and_equals: true
     implementation_imports: true
     implicit_call_tearoffs: true
-    iterable_contains_unrelated_type: true
     join_return_with_assignment: false
     leading_newlines_in_multiline_strings: true
     library_annotations: true
@@ -96,7 +95,6 @@ linter:
     library_prefixes: true
     library_private_types_in_public_api: true
     lines_longer_than_80_chars: false
-    list_remove_unrelated_type: true
     literal_only_boolean_expressions: true
     missing_whitespace_between_adjacent_strings: false
     no_adjacent_strings_in_list: true

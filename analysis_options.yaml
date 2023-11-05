@@ -8,10 +8,6 @@ analyzer:
     strict-inference: false    # utterly useless
     strict-raw-types: false    # utterly useless
 
-dart_code_metrics:
-  metrics:
-    cyclomatic-complexity: 20
-
 linter:
   rules:
     always_declare_return_types: true

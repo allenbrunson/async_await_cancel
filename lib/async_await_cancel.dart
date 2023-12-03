@@ -1,10 +1,10 @@
-// async_await_cancel.dart -- async_await_cancel master export module
+// async_await_cancel.dart -- async_await_cancel master module
 // by allen brunson  september 21 2021
 
 
 /******************************************************************************/
 /*                                                                            */
-/***  async_await_cancel master export module                               ***/
+/***  async_await_cancel master module                                      ***/
 /*                                                                            */
 /******************************************************************************/
 

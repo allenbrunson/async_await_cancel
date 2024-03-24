@@ -1,5 +1,4 @@
 # analysis_options.yaml -- master dart analysis options
-# https://dart-lang.github.io/linter/lints/
 # by allen brunson  january 2 2021
 
 analyzer:
@@ -16,6 +15,7 @@ linter:
     always_specify_types: false
     always_use_package_imports: true
     annotate_overrides: true
+    annotate_redeclares: true
     avoid_annotating_with_dynamic: false
     avoid_bool_literals_in_conditional_expressions: true
     avoid_catches_without_on_clauses: false

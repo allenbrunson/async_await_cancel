@@ -79,7 +79,6 @@ linter:
     empty_catches: true
     empty_constructor_bodies: true
     empty_statements: true
-    enable_null_safety: true
     eol_at_end_of_file: true
     exhaustive_cases: true
     file_names: true
@@ -133,7 +132,6 @@ linter:
     prefer_constructors_over_static_methods: false
     prefer_contains: true
     prefer_double_quotes: true
-    prefer_equal_for_default_values: true
     prefer_expression_function_bodies: false
     prefer_final_fields: true
     prefer_final_in_for_each: true

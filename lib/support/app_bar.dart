@@ -24,7 +24,7 @@ double appBarHeight() {
 }
 
 Widget scaffold(BuildContext context, PreferredSizeWidget appBar, Widget body) {
-    final colr = Theme.of(context).colorScheme.background;
+    final colr = Theme.of(context).colorScheme.surface;
     return Scaffold(appBar:appBar, body:body, backgroundColor:colr);
 }
 

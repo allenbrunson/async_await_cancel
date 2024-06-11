@@ -8,9 +8,6 @@
 /*                                                                            */
 /******************************************************************************/
 
-// preamble
-library async_await_cancel;
-
 // dart packages
 export "dart:async";
 export "dart:io";

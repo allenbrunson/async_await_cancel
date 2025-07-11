@@ -67,7 +67,7 @@ class _HomeWidgetState extends State<HomeWidget>
     }
 
     Widget _bodyInner() {
-        final colr = Theme.of(this.context).dialogBackgroundColor;
+        const colr = Colors.grey;
         final view = SafeArea(child:this._surface());
         return backgroundColorWidget(view, colr);
     }

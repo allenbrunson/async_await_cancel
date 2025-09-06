@@ -179,6 +179,7 @@ linter:
     specify_nonobvious_local_variable_types: false
     specify_nonobvious_property_types: true
     strict_top_level_inference: true
+    switch_on_type: true
     test_types_in_equals: true
     throw_in_finally: true
     tighten_type_of_initializing_formals: true
@@ -214,6 +215,7 @@ linter:
     unnecessary_string_interpolations: true
     unnecessary_this: false
     unnecessary_to_list_in_spreads: true
+    unnecessary_unawaited: true
     unnecessary_underscores: true
     unreachable_from_main: false
     unrelated_type_equality_checks: true

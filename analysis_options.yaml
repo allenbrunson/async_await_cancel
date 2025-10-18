@@ -3,9 +3,9 @@
 
 analyzer:
   language:
-    strict-casts: false        # causes thousands of warnings
-    strict-inference: false    # utterly useless
-    strict-raw-types: false    # utterly useless
+    strict-casts: false        # should be gradually enabled
+    strict-inference: false    # causes warnings in dart's own code
+    strict-raw-types: true
 
 linter:
   rules:

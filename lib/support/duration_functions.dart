@@ -15,3 +15,28 @@ Duration durationAnimate() {
 Duration durationSeconds(double seconds) {
     return Duration(milliseconds:(seconds * 1000.0).toInt());
 }
+
+Future<bool> waitForDelay(double seconds) async {
+    return waitForDuration(durationSeconds(seconds));
+}
+
+Future<bool> waitForDuration(Duration duration) async {
+    try {
+        await Future.delayed(duration, _computation);
+        return true;
+    }
+    catch (e) {
+        return false;
+    }
+}
+
+
+/******************************************************************************/
+/*                                                                            */
+/***  private utility functions                                             ***/
+/*                                                                            */
+/******************************************************************************/
+
+Future<bool> _computation() async {
+    return true;
+}

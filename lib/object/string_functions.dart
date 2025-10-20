@@ -21,7 +21,7 @@ bool isString(dynamic string) {
 }
 
 String sanitizeString(dynamic string) {
-    if (isString(string)) return string;
+    if (string is String) return string;
     return "";
 }
 

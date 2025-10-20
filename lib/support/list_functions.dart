@@ -9,7 +9,7 @@
 /******************************************************************************/
 
 void listAdd<T>(List<T> list, dynamic object) {
-    if (listValidObject<T>(object)) list.add(object);
+    if (listValidObject<T>(object) && (object is T)) list.add(object);
 }
 
 bool listValidObject<T>(dynamic object) {

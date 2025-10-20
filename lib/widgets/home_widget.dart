@@ -55,7 +55,7 @@ class _HomeWidgetState extends State<HomeWidget>
     }
 
     Future<NetResponse> _netRequestProc() async {
-        await Future.delayed(durationSeconds(5.0));
+        await waitForDelay(5.0);
         return NetResponse.successfulRequest();
     }
 

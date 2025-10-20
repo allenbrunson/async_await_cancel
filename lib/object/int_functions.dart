@@ -17,6 +17,6 @@ bool isInt(dynamic value) {
 }
 
 int sanitizeInt(dynamic value) {
-    if (isInt(value)) return value;
+    if (value is int) return value;
     return 0;
 }

@@ -21,6 +21,6 @@ bool isDouble(dynamic value) {
 }
 
 double sanitizeDouble(dynamic value) {
-    if (isDouble(value)) return value;
+    if (value is double) return value;
     return 0.0;
 }

@@ -3,8 +3,8 @@
 
 analyzer:
   language:
-    strict-casts: false        # should be gradually enabled
-    strict-inference: false    # causes warnings in dart's own code
+    strict-casts: true
+    strict-inference: true
     strict-raw-types: true
 
 linter:

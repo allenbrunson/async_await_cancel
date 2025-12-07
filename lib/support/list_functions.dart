@@ -8,10 +8,6 @@
 /*                                                                            */
 /******************************************************************************/
 
-void listAdd<T>(List<T> list, dynamic object) {
-    if (listValidObject<T>(object) && (object is T)) list.add(object);
-}
-
 bool listValidObject<T>(dynamic object) {
     if (object == null) return false;
     return (object is T);
@@ -27,7 +23,7 @@ bool listValidObject<T>(dynamic object) {
 extension ListExtras<T> on List<T>
 {
     void addIf(dynamic object) {
-        listAdd(this, object);
+        if (listValidObject<T>(object) && (object is T)) this.add(object);
     }
 
     T removeFirst() {

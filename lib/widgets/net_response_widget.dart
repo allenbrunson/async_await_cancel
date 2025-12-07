@@ -75,7 +75,7 @@ AlertDialog netResponseAlertDialog(BuildContext? ctxt, NetResponse response) {
     final list = <Widget>[];
     final titl = alertTitle(ctxt, response.title);
     final view = NetResponseWidget(netResponse:response);
-    listAdd(list, alertChoiceButton(ctxt, kOkayTitle, DialogButton.okay));
+    list.addIf(alertChoiceButton(ctxt, kOkayTitle, DialogButton.okay));
     return AlertDialog(actions:list, content:view, title:titl);
 }
 

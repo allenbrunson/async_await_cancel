@@ -117,11 +117,11 @@ class _ProgressWidgetState extends State<ProgressWidget>
     List<Widget> _columnChildren() {
         final list = <Widget>[];
         if (stringHasLength(this.widget.message)) {
-            listAdd(list, this._message());
+            list.addIf(this._message());
         }
-        listAdd(list, this._progressIndicator());
+        list.add(this._progressIndicator());
         if (this._showCancelButton()) {
-            listAdd(list, this._cancelButton());
+            list.addIf(this._cancelButton());
         }
         return list;
     }

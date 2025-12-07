@@ -16,3 +16,21 @@ bool listValidObject<T>(dynamic object) {
     if (object == null) return false;
     return (object is T);
 }
+
+
+/******************************************************************************/
+/*                                                                            */
+/***  list extension methods                                                ***/
+/*                                                                            */
+/******************************************************************************/
+
+extension ListExtras<T> on List<T>
+{
+    void addIf(dynamic object) {
+        listAdd(this, object);
+    }
+
+    T removeFirst() {
+        return this.removeAt(0);
+    }
+}

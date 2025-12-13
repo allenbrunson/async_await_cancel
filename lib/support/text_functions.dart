@@ -11,11 +11,9 @@ import "package:async_await_cancel/async_await_cancel.dart";
 /******************************************************************************/
 
 String textWidgetString(Text text) {
-    if ((text.data is String) && text.data!.isNotEmpty) {
-        return text.data!;
-    }
-    if (text.textSpan is TextSpan) {
-        return text.textSpan!.toPlainText(includeSemanticsLabels:false);
-    }
-    return "";
+    final data = text.data;
+    final span = text.textSpan;
+    if ((data is String) && data.isNotEmpty) return data;
+    if (span is TextSpan) return span.toPlainText(includeSemanticsLabels:false);
+    return emptyString();
 }

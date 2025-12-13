@@ -16,21 +16,25 @@ String ellipsis(String? string) {
     return "${sanitizeString(string)} ${charString(0x2026)}";
 }
 
+String emptyString() {
+    return "";
+}
+
 bool isString(dynamic string) {
     return (string is String);
 }
 
 String sanitizeString(dynamic string) {
     if (string is String) return string;
-    return "";
+    return emptyString();
 }
 
 bool stringHasLength(String? string) {
-    return isString(string) && string!.isNotEmpty;
+    return sanitizeString(string).isNotEmpty;
 }
 
 bool stringIsEmpty(String? string) {
-    return stringHasLength(string) == false;
+    return sanitizeString(string).isEmpty;
 }
 
 String trimString(String? string) {

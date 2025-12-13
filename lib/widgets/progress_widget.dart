@@ -78,8 +78,8 @@ class _ProgressWidgetState extends State<ProgressWidget>
 
     bool _showCancelButton() {
         final data = this.widget.netCancelable;
-        if ((data is NetCancelable) == false) return false;
-        return data!.allowUserCancel();
+        if (data == null) return false;
+        return data.allowUserCancel();
     }
 
     void _timerProc() {

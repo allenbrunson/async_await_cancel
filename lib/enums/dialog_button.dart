@@ -8,8 +8,7 @@
 /*                                                                            */
 /******************************************************************************/
 
-enum DialogButton
-{
+enum DialogButton {
     okay,
     cancel
 }
@@ -26,6 +25,6 @@ bool isDialogButton(dynamic dialogButton) {
 }
 
 DialogButton sanitizeDialogButton(DialogButton? dialogButton) {
-    if (isDialogButton(dialogButton)) return dialogButton!;
+    if (dialogButton is DialogButton) return dialogButton;
     return DialogButton.cancel;
 }

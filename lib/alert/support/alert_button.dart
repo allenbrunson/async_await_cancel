@@ -12,16 +12,16 @@ import "package:async_await_cancel/async_await_cancel.dart";
 
 Widget? alertButton(BuildContext? context, String title, VoidCallback proc) {
     if (title.isEmpty) return null;
-    if ((context is BuildContext) == false) return null;
+    if (context == null) return null;
     final text = title.toUpperCase();
     final view = Text(text, style:alertButtonTextStyle());
-    return TextButton(child:view, onPressed:proc, style:_buttonStyle(context!));
+    return TextButton(child:view, onPressed:proc, style:_buttonStyle(context));
 }
 
 Widget? alertChoiceButton(BuildContext? context, String title, dynamic value) {
     if (title.isEmpty) return null;
-    if ((context is BuildContext) == false) return null;
-    final proc = (){Navigator.of(context!).pop(value);};
+    if (context == null) return null;
+    final proc = (){Navigator.of(context).pop(value);};
     return alertButton(context, title, proc);
 }
 

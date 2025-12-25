@@ -11,8 +11,8 @@ import "package:async_await_cancel/async_await_cancel.dart";
 /******************************************************************************/
 
 Color textColor(BuildContext? context, Color backgroundColor) {
-    if ((context is BuildContext) == false) return Colors.white;
-    final data = Theme.of(context!).brightness;
+    if (context == null) return Colors.white;
+    final data = Theme.of(context).brightness;
     return _fixup(backgroundColor, _textColorForBrightness(data));
 }
 

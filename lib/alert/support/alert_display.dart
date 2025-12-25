@@ -21,7 +21,7 @@ void hideAlert(BuildContext? context) {
 // will want to look at higher-level alert modules.
 
 Future<T?> showAlertWidget<T>(BuildContext? ctxt, Widget widget) async {
-    if ((ctxt is BuildContext) == false) return null;
+    if (ctxt == null) return null;
     final proc = (_){return widget;};
-    return showDialog<T>(barrierDismissible:false, builder:proc, context:ctxt!);
+    return showDialog<T>(barrierDismissible:false, builder:proc, context:ctxt);
 }

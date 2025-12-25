@@ -42,6 +42,6 @@ Widget? choiceTitle(BuildContext? context, String? title) {
 
 Widget? _widget(BuildContext? ctxt, String? text, TextStyle style, [int? lines]) {
     if (stringIsEmpty(text)) return null;
-    final view = Text(text!, style:style, maxLines:lines);
+    final view = Text(sanitizeString(text), style:style, maxLines:lines);
     return clipboardText(ctxt, view, showSnackBar:false);
 }

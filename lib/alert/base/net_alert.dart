@@ -19,7 +19,7 @@ Future<NetResponse> showNetRequest(BuildContext? ctxt, String title,
  bool showFailure = false, double? timeout = null}) async
 {
     if ((ctxt is BuildContext) == false) return proc();
-    final data = NetCancelable(proc, allowUserCancel:allowUserCancel);
+    final data = NetCancelable.create(proc, allowUserCancel:allowUserCancel);
     final tval = NetPrefs.timeout(timeout);
     final view = progressAlertDialog(ctxt, title, tval, message, data);
     unawaited(showAlertWidget(ctxt, view));

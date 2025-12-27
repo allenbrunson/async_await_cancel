@@ -19,6 +19,9 @@ export "dart:ui" show Color, Offset, RRect, Radius, Rect, Size;
 export "dart:ui" show Canvas, PictureRecorder;
 export "dart:ui" show Image, ImageByteFormat, instantiateImageCodec;
 
+// packages
+export "package:async/async.dart";
+
 // flutter
 export "package:flutter/material.dart" hide Image;
 export "package:flutter/services.dart";

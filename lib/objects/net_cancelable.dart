@@ -1,7 +1,6 @@
 // net_cancelable.dart -- network cancelable operation
 // by allen brunson  september 22 2019
 
-import "package:async/async.dart";
 import "package:async_await_cancel/async_await_cancel.dart";
 
 
@@ -13,12 +12,18 @@ import "package:async_await_cancel/async_await_cancel.dart";
 
 class NetCancelable
 {
-    // constructor
+    // instance variables
 
-    NetCancelable(NetResponseProc proc, {bool allowUserCancel = false}) {
-        this._allowUserCancel = allowUserCancel;
-        this._completer = this._makeCompleter();
-        this._netResponseProc = proc;
+    bool _allowUserCancel;
+    final CancelableCompleter<NetResponse> _completer;
+    final NetResponseProc _netResponseProc;
+
+    // construction
+
+    NetCancelable(this._allowUserCancel, this._completer, this._netResponseProc);
+
+    static NetCancelable create(NetResponseProc proc, {bool allowUserCancel = false}) {
+        return NetCancelable(allowUserCancel, _makeCompleter(), proc);
     }
 
     // public instance methods
@@ -28,12 +33,12 @@ class NetCancelable
     }
 
     Future<NetResponse> complete() async {
-        final fail = this._fail();
+        final fail = _fail();
         this._completer.complete(this._netResponseProc());
         if (this._completer.isCanceled) return fail;
-        final data = await this._completer.operation.valueOrCancellation(fail);
-        if (isNetResponse(data)) return (data as NetResponse);
-        return fail;
+        final resp = await this._completer.operation.valueOrCancellation(fail);
+        if (resp == null) return fail;
+        return resp;
     }
 
     // allowUserCancel property
@@ -45,26 +50,25 @@ class NetCancelable
     void setAllowUserCancel(bool allowUserCancel) {
         this._allowUserCancel = allowUserCancel;
     }
+}
 
-    // private instance methods
 
-    FutureOr<NetResponse> _cancel() async {
-        return this._fail();
-    }
+/******************************************************************************/
+/*                                                                            */
+/***  private utility functions                                             ***/
+/*                                                                            */
+/******************************************************************************/
 
-    NetResponse _fail() {
-        return NetResponse.canceledRequest();
-    }
+FutureOr<NetResponse> _cancel() async {
+    return _fail();
+}
 
-    CancelableCompleter<NetResponse> _makeCompleter() {
-        return CancelableCompleter<NetResponse>(onCancel:this._cancel);
-    }
+NetResponse _fail() {
+    return NetResponse.canceledRequest();
+}
 
-    // private instance variables
-
-    bool _allowUserCancel = false;
-    late CancelableCompleter<NetResponse> _completer;
-    late NetResponseProc _netResponseProc;
+CancelableCompleter<NetResponse> _makeCompleter() {
+    return CancelableCompleter<NetResponse>(onCancel:_cancel);
 }
 
 
@@ -77,7 +81,7 @@ class NetCancelable
 overview
 --------
 
-allows end users to cancel a network request.
+allows users of this library to cancel a network request.
 
 this object has a convenience bool property, allowUserCancel, which is not used
 internally. this is for cases where you want to use a NetCancelable object even
@@ -88,7 +92,7 @@ you might want to cancel because the user switched away from the app.
 how to use this module
 ----------------------
 
-1) write a NetResponseProc that performs your network operation, and returns a
+1) write a NetResponseProc that performs your network operation and returns a
 NetResponse at the end.
 
 2) create a NetCancelable object with the NetResponseProc.
@@ -115,9 +119,9 @@ be no network data to operate on.
 maintenance notes
 -----------------
 
-the good news is that CancelableCompleter achieves what initially seemed
-impossible: it can abruptly and immediately abort a function that returns a
-Future<T>. the bad news is that the way it works is frustrating,
+the good news is that CancelableCompleter achieves what most of the dart world
+believes is impossible: it can abruptly and immediately abort a function that
+returns a Future<T>. the bad news is that the way it works is frustrating,
 counter-intuitive, and almost completely undocumented. it is not much of a
 surprise that it is not widely used in the dart community.
 

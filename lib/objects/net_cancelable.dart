@@ -119,11 +119,11 @@ be no network data to operate on.
 maintenance notes
 -----------------
 
-the good news is that CancelableCompleter achieves what most of the dart world
-believes is impossible: it can abruptly and immediately abort a function that
-returns a Future<T>. the bad news is that the way it works is frustrating,
+the good news is that CancelableCompleter achieves what i thought was
+impossible: it can abruptly and immediately abort a function that returns a
+Future<T>. the bad news is that the way it works is frustrating,
 counter-intuitive, and almost completely undocumented. it is not much of a
-surprise that it is not widely used in the dart community.
+surprise that it is not widely used.
 
 i had to fiddle with this thing for many days to get it to work. one thing i can
 now say for sure: i have no idea how async/await is implemented under the hood.

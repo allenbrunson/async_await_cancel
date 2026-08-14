@@ -21,10 +21,8 @@ export "dart:ui" show Image, ImageByteFormat, instantiateImageCodec;
 
 // packages
 export "package:async/async.dart";
-
-// flutter
-export "package:flutter/material.dart" hide Image;
 export "package:flutter/services.dart";
+export "package:material_ui/material_ui.dart" hide Image;
 
 // alerts
 export "alert/base/net_alert.dart";

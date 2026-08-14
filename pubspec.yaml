@@ -14,3 +14,4 @@ dependencies:
   async: 2.13.1
   flutter:
     sdk: flutter
+  material_ui: 1.0.0
